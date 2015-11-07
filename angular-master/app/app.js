@@ -1,35 +1,51 @@
-var application = angular.module('application-name',
-    ['ui.router', 'application.controllers', 'application.services', 'application.factories', 'application.directives', 'application.config']);
+(function () {
+    'use strict';
 
-application.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    angular
+        .module('app', ['ngRoute', 'ngCookies'])
+        .config(config)
+        .run(run);
 
-    $urlRouterProvider.when("", "/test");
-    $urlRouterProvider.otherwise("/test");
+    config.$inject = ['$routeProvider', '$locationProvider'];
+    function config($routeProvider, $locationProvider) {
+        $routeProvider
+            .when('/', {
+                controller: 'HomeController',
+                templateUrl: 'views/home/home.view.html',
+                controllerAs: 'vm'
+            })
 
-    $stateProvider
-        .state('test', {
-            abstract: false,
-            url: '/test',
-            templateUrl: 'views/test/test.html',
-            controller: 'TestController'
-        })
-        .state('test2', {
-            abstract: false,
-            url: '/test2',
-            templateUrl: 'views/test2/test2.html',
-            controller: 'Test2Controller',
-            resolve: {
-                auth: function(LoggedUser) {
-                    if (!LoggedUser.isLogged()) {
-                        $stateProvider.state('test');
-                    }
-                }
+            .when('/login', {
+                controller: 'LoginController',
+                templateUrl: 'views/login/login.view.html',
+                controllerAs: 'vm'
+            })
+
+            .when('/register', {
+                controller: 'RegisterController',
+                templateUrl: 'views/register/register.view.html',
+                controllerAs: 'vm'
+            })
+
+            .otherwise({ redirectTo: 'views/login' });
+    }
+
+    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
+    function run($rootScope, $location, $cookieStore, $http) {
+        // keep user logged in after page refresh
+        $rootScope.globals = $cookieStore.get('globals') || {};
+        if ($rootScope.globals.currentUser) {
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+        }
+
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            // redirect to login page if not logged in and trying to access a restricted page
+            var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
+            var loggedIn = $rootScope.globals.currentUser;
+            if (restrictedPage && !loggedIn) {
+                $location.path('/login');
             }
         });
+    }
 
-}]);
-    //.run(['$http', 'LoggedUser', function($http, LoggedUser) {
-    //    if (LoggedUser.isLogged()) {
-    //        $http.defaults.headers.common['X-Session-Header'] = LoggedUser.getToken();
-    //    }
-    //}]);
+})();
