@@ -1,0 +1,161 @@
+[
+    {
+        "index": 0,
+        "isActive": true,
+        "serviceName": "Business Services",
+        "services": [
+          {
+            "id": 0,
+            "name": "Hospitality"
+          },
+          {
+            "id": 1,
+            "name": "Tourism"
+          },
+          {
+            "id": 2,
+            "name": "Support"
+          },
+          {
+            "id": 3,
+            "name": "administrative"
+          },
+          {
+            "id": 4,
+            "name": "Management of companies"
+          },
+          {
+            "id": 5,
+            "name": "Professional services"
+          },
+          {
+            "id": 6,
+            "name": "finance"
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "isActive": true,
+        "serviceName": "Presentation Services",
+        "services": [
+          {
+            "id": 0,
+            "name": "Node.js"
+          },
+          {
+            "id": 1,
+            "name": "AngularJS"
+          },
+          {
+            "id": 2,
+            "name": "Error Handling"
+          },
+          {
+            "id": 3,
+            "name": "PHP"
+          },
+          {
+            "id": 4,
+            "name": "JSON"
+          },
+          {
+            "id": 5,
+            "name": "Encryption"
+          },
+          {
+            "id": 6,
+            "name": "Auto Complete"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "isActive": false,
+        "serviceName": "Common Services",
+        "services": [
+          {
+            "id": 0,
+            "name": "Multimedia Services"
+          },
+          {
+            "id": 1,
+            "name": "CD Presentsion Services"
+          },
+          {
+            "id": 2,
+            "name": "Powerpoint Presentsion"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "isActive": true,
+        "serviceName": "Web Accessibility Services",
+        "services": [
+          {
+            "id": 0,
+            "name": "Accessibility Training"
+          },
+          {
+            "id": 1,
+            "name": "Accessible Site Certification"
+          },
+          {
+            "id": 2,
+            "name": "Accessibility Evaluation and Reporting"
+          },
+          {
+            "id": 3,
+            "name": "Consulting & Technical Assistance"
+          },
+          {
+            "id": 4,
+            "name": "Web Content Accessibility"
+          },
+          {
+            "id": 5,
+            "name": "Website accessibility audits"
+          },
+          {
+            "id": 6,
+            "name": "Accessible Web applications"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "isActive": false,
+        "serviceName": "Security Services",
+        "services": [
+          {
+            "id": 0,
+            "name": "Security Compliance"
+          },
+          {
+            "id": 1,
+            "name": "Security Design and Architecture"
+          },
+          {
+            "id": 2,
+            "name": "Security Audit and Assessment"
+          },
+          {
+            "id": 3,
+            "name": "Vulnerability Assessment"
+          },
+          {
+            "id": 4,
+            "name": "Penetration Test"
+          },
+          {
+            "id": 5,
+            "name": "Security Policy And Process Consulting"
+          },
+          {
+            "id": 6,
+            "name": "Security Roadmap Framework Consulting"
+          }
+        ]
+      }
+]
