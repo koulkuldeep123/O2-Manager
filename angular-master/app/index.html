@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <title>O2 Manager</title>
+    <link href="css/reset.css" rel="stylesheet" />
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
-    <!--<link href="/css/mystyles.css" rel="stylesheet" />-->
+    <link href="css/mystyles.css" rel="stylesheet" />
 </head>
 <body>
 
-<header>
-</header>
+
     <div class="container">
 
             <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
@@ -18,27 +18,27 @@
     </div>
 
 
-<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.js"></script>
-<script src="lib/angular/angular.js"></script>
-<script src="lib/ui-router/angular-route.js"></script>
-<script src="lib/angular-cookies/angular-cookies.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="lib/angular/angular.js"></script>
+<script type="text/javascript" src="lib/ui-router/angular-route.js"></script>
+<script type="text/javascript" src="lib/angular-cookies/angular-cookies.js"></script>
 
-<script src="app.js"></script>
-<script src="app-services/authentication.service.js"></script>
-<script src="app-services/flash.service.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="app-services/authentication.service.js"></script>
+<script type="text/javascript" src="app-services/flash.service.js"></script>
 
 <!-- Real user service that uses an api -->
 <!-- <script src="app-services/user.service.js"></script> -->
 
 <!-- Fake user service for demo that uses local storage -->
-<script src="app-services/user.service.local-storage.js"></script>
+<script type="text/javascript" src="app-services/user.service.local-storage.js"></script>
 
-<script src="views/home/home.controller.js"></script>
-<script src="views/login/login.controller.js"></script>
-<script src="views/register/register.controller.js"></script>
+<script type="text/javascript" src="views/home/home.controller.js"></script>
+<script type="text/javascript" src="views/login/login.controller.js"></script>
+<script type="text/javascript" src="views/register/register.controller.js"></script>
 
-<script src="js/directives.js"></script>
+<script type="text/javascript" src="js/directives.js"></script>
 
 
 </body>

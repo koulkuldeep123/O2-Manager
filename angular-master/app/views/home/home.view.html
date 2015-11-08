@@ -1,4 +1,6 @@
-﻿<h1>Hello {{vm.user.firstName}}!</h1>
+﻿<div ng-include src='"templates/header/header.html"'></div>
+<div class="home">
+<h1>Hello {{vm.user.firstName}}!</h1>
 <p>You are logged in!!!</p>
 <h3>All registered users:</h3>
 <ul>
@@ -9,3 +11,5 @@
 </ul>
 <p>&nbsp;</p>
 <p><a href="#/login" class="btn btn-primary">Logout</a></p>
+</div>
+<div ng-include src='"templates/footer/footer.html"'></div>

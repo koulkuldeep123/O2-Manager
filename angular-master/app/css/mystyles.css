@@ -1,6 +1,11 @@
-.o2-logo{float:left;
-    background:url('/img/o2.logo.png') no-repeat;
-    width:70px;height:80px;
-}
-.head-nav{float:right;}
+.container:nth-of-type(1){margin-left: 0;width: 100%;margin-right: 0;}
+.home{min-height:500px;}
+
+
+.o2-logo{float:left;background:url('../img/o2.logo.png') no-repeat;width:70px;height:80px;}
+
+.head-nav{float:right;background: url("../img/user-nav.png") no-repeat; height: 70px; width: 369px;}
+
 .clear{clear:both;}
+
+.cognizant-logo{float:left;background:url('../img/cognizant-logo.png') no-repeat;width:146px;height:43px;}
