@@ -22,17 +22,10 @@ calendarDemoApp.controller('CalendarCtrl',
       var s = new Date(start).getTime() / 1000;
       var e = new Date(end).getTime() / 1000;
       var m = new Date(start).getMonth();
-      var events = [{title: 'Feed Me ' + m,start: s + (50000),end: s + (100000),allDay: false, className: ['customFeed']}];
+      var events = [{title: ' ' + m,start: s + (50000),end: s + (100000),allDay: false, className: ['customFeed']}];
       callback(events);
     };
-    /* alert on Drop */
-     $scope.alertOnDrop = function(event, delta, revertFunc, jsEvent, ui, view){
-       $scope.alertMessage = ('Event Dropped to make dayDelta ' + delta);
-    };
-    /* alert on Resize */
-    $scope.alertOnResize = function(event, delta, revertFunc, jsEvent, ui, view ){
-       $scope.alertMessage = ('Event Resized to make dayDelta ' + delta);
-    };
+    
     /* add custom event*/
     $scope.addEvent = function() {
       $scope.events.push({
@@ -58,25 +51,17 @@ calendarDemoApp.controller('CalendarCtrl',
         }
       });
     };
-     /* Render Tooltip */
-    $scope.eventRender = function( event, element, view ) {
-        element.attr({'tooltip': event.title,
-                      'tooltip-append-to-body': true});
-        $compile(element)($scope);
-    };
+  
     /* config object */
     $scope.uiConfig = {
       calendar:{
         height: 500,
         editable: true,
         header:{
-          left: 'today',
-          center: 'title',
-          right: 'prev, next'
+          left: 'title',
+          center: '',
+          right: 'today,next'
         },
-        eventClick: $scope.alertOnEventClick,
-        eventDrop: $scope.alertOnDrop,
-        eventResize: $scope.alertOnResize,
         eventRender: $scope.eventRender
       }
     };

@@ -219,7 +219,7 @@ angular.module('ui.calendar', [])
       link: function(scope, elm, attrs, controller) {
 
         var sources = scope.eventSources,
-            sourcesChanged = false,
+            sourcesChanged = true,
             calendar,
             eventSourcesWatcher = controller.changeWatcher(sources, controller.sourceFingerprint),
             eventsWatcher = controller.changeWatcher(controller.allEvents, controller.eventFingerprint),
