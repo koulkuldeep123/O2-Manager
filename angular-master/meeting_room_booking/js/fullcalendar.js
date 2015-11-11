@@ -8381,6 +8381,7 @@ function Calendar_constructor(element, overrides) {
 					// need to do this after View::render, so dates are calculated
 					updateHeaderTitle();
 					updateTodayButton();
+					updatePrevButton();
 
 					getAndRenderEvents();
 				}
@@ -8534,6 +8535,15 @@ function Calendar_constructor(element, overrides) {
 		}
 		else {
 			header.enableButton('today');
+		}
+	}
+	function updatePrevButton() {
+		var now = t.getNow();
+		if (now.isWithin(currentView.intervalStart, currentView.intervalEnd)) {
+			header.disableButton('prev');
+		}
+		else {
+			header.enableButton('prev');
 		}
 	}
 	
