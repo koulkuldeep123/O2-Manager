@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="calendarDemoApp" id="top">
+<head>
+    <title>Book a meeting room</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/fullcalendar.css">
+    <link rel="stylesheet" href="css/calendarDemo.css">
+	
+</head>
+<body data-spy="scroll">
+<div role="main">
+    <div class="container">
+        <section id="directives-calendar" ng-controller="CalendarCtrl">
+                <div class="row-fluid">
+                    <div class="col-md-4">
+                        <div class="btn-group calTools">
+                          <button type="button" class="btn btn-primary" ng-click="addEvent()">
+                            Book a meeting Room
+                          </button>
+                        </div>
+
+                        <ul class="unstyled">
+                            <li ng-repeat="e in events">
+                                <div class="alert alert-info">
+                                    <a class="close" ng-click="remove($index)"><i class="fa fa-times"></i></a>
+                                    <b> <input ng-model="e.title"></b> 
+                                    {{e.start | date:"EEE,dd (h-mma)"}} - {{e.end | date:"(h-mma)"}}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8">
+                        <tabset>
+                              <tab select="renderCalender('myCalendar1');">
+                              <tab-heading>
+                               <i class="fa fa-bell"></i> Meeting room one
+                              </tab-heading>
+                              <div class="btn-toolbar">
+                                <p class="pull-right lead">Meeting room one Options</p>
+                                <div class="btn-group">
+                                    <button class="btn btn-success" ng-click="changeView('agendaDay', 'myCalendar1')">AgendaDay</button>
+                                    <button class="btn btn-success" ng-click="changeView('agendaWeek', 'myCalendar1')">AgendaWeek</button>
+                                    <button class="btn btn-success" ng-click="changeView('month', 'myCalendar1')">Month</button>
+                                </div>
+                              </div>
+                            <div class="calendar" ng-model="eventSources" calendar="myCalendar1" ui-calendar="uiConfig.calendar"></div>
+                           </tab>
+                           <tab select="renderCalender('myCalendar2');">
+                            <tab-heading>
+                              <i class="fa fa-bell"></i> Meeting room two
+                            </tab-heading>
+                              <div class="btn-toolbar">
+                                <p class="pull-right lead">Meeting room two Options</p>
+                                <div class="btn-group">
+                                    <button class="btn btn-success" ng-click="changeView('agendaDay', 'myCalendar2')">AgendaDay</button>
+                                    <button class="btn btn-success" ng-click="changeView('agendaWeek', 'myCalendar2')">AgendaWeek</button>
+                                    <button class="btn btn-success" ng-click="changeView('month', 'myCalendar2')">Month</button>
+                                </div>
+                              </div>
+                            <div class="calendar" ng-model="eventSources" calendar="myCalendar2" ui-calendar="uiConfig.calendar"></div>
+                           </tab>
+						</tabset>
+                    </div>
+                </div>
+        </section>
+    </div>
+</div> 
+
+<script src="js/jquery.min.js"></script>
+
+    <script src="js/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/fullcalendar.js"></script>
+    <script src="js/gcal.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/calendarDemo.js"></script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-17352735-3']);
+            _gaq.push(['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>
