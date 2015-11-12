@@ -1,11 +1,31 @@
-.container:nth-of-type(1){margin-left: 0;width: 100%;margin-right: 0;}
+.container:nth-of-type(1){margin-left: 0;width: 100%;margin-right: 0;padding: 0;}
 .home{min-height:490px;}
 
 
-.o2-logo{float:left;background:url('../img/o2.logo.png') no-repeat;width:70px;height:80px;}
+.o2-logo{float:left;background:url('../img/o2.logo.png') no-repeat;    width: 235px;height:80px; background-position: center;border-right: 1px solid #c8c7cc;}
 
-.head-nav{float:right;background: url("../img/user-nav.png") no-repeat; height: 70px; width: 369px;}
+.head-nav{float:right; height: 70px; width: 369px;}
+.head-nav i{font-size: 25px; margin: 8px 20px;}
+.head-nav ul li{display: inline-block; vertical-align: top;}
+.head-nav ul li div{text-align: center;}
+.head-nav ul{text-align: center;}
 
 .clear{clear:both;}
 
-.cognizant-logo{float:left;background:url('../img/cognizant-logo.png') no-repeat;width:146px;height:43px;}
+header{border-bottom: 1px solid #c8c7cc;}
+
+.cognizant-logo{border-right: 1px solid #c8c7cc;float:left;background:url('../img/cognizant-logo.png') no-repeat;width: 235px;height:80px;background-position: right; background-color: rgb(239,239,244);}
+
+
+
+
+.leftNav{float: left;width: 235px;border: 1px solid #ccc;}
+
+.leftNav ul {list-style: none;padding: 0;color: #777}
+.leftNav ul li{display: block;border:1px solid #ececec}
+
+.leftNav ul li a{text-decoration: none;padding: 10px 5px;display: block;color: #777}
+
+.leftNav ul li i{padding: 0 10px;}
+
+.leftNav ul li a:hover{background-color: #007AFF;color: #fff}
