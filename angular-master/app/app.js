@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app', ['ngRoute', 'ngCookies','chart.js'])
+        .module('app', ['ngRoute', 'ngCookies'])
         .config(config)
         .run(run);
 

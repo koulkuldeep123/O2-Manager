@@ -1,13 +1,71 @@
-<div>New Users</div>
 
-<canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
-</canvas>
+<div class="angular-chart-user">
+<div class="new-user-head">New Users</div>
+
+    <canvas id="pieChart" width="200" height="200"></canvas>
+
 
 <div>
-<ul>
+<ul id="new-user-legend">
     <li>90% <br>Satsified</li>
     <li>2% <br>Unsatsified</li>
     <li>8% <br>NA</li>
 
 </ul>
+    <ul class="new-user-data ">
+        <li>90% <br>Satsified</li>
+        <li>2% <br>Unsatsified</li>
+        <li class="no-border-right">8% <br>NA</li>
+
+    </ul>
 </div>
+</div>
+<div class="clearfix"></div>
+
+<script>
+
+    var pieChart  = document.getElementById("pieChart").getContext("2d");
+    var pieData = [
+        {
+            value: 90,
+            color:"#46BFBD",
+            highlight: "#5AD3D1",
+            label: "Satisfied",
+            name : 'Satisfied'
+        },
+        {
+            value: 2,
+            color: "#F7464A",
+            highlight: "#FF5A5E",
+            label: "Unsatisfied",
+            name : 'Unsatisfied'
+        },
+        {
+            value: 8,
+            color: "#EEE",
+            highlight: "#CCC",
+            label: "NA",
+            name : 'NA'
+        }
+    ]
+    var options = {
+        // String - Template string for single tooltips
+        tooltipTemplate: "",
+        // String - Template string for multiple tooltips
+        multiTooltipTemplate: "",
+    };
+
+    var myPieChart = new Chart(pieChart).Doughnut(pieData,{
+
+        multiTooltipTemplate: "<%= value %>",
+        segmentShowStroke: false,
+        animateRotate: true,
+        animateScale: false,
+        percentageInnerCutout: 50
+    });
+
+    document.getElementById('new-user-legend').innerHTML = myPieChart.generateLegend();
+
+
+</script>
+

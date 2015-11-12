@@ -1,13 +1,14 @@
 .container:nth-of-type(1){margin-left: 0;width: 100%;margin-right: 0;padding: 0;}
-.home{min-height:490px;}
+/*.home{min-height:490px;}*/
 
 
 .o2-logo{float:left;background:url('../img/o2.logo.png') no-repeat;    width: 235px;height:80px; background-position: center;border-right: 1px solid #c8c7cc;}
 
 .head-nav{float:right; height: 70px; width: 369px;}
-.head-nav i{font-size: 25px; margin: 8px 20px;}
-.head-nav ul li{display: inline-block; vertical-align: top;}
-.head-nav ul li div{text-align: center;}
+.head-nav i{font-size: 25px; margin: 8px 20px;color: #007AFF;}
+.head-nav ul li{display: inline-block; vertical-align: top; cursor: pointer;}
+.head-nav ul li div{text-align: center;color: #777;}
+.head-nav ul li a {text-decoration: none;}
 .head-nav ul{text-align: center;}
 
 .clear{clear:both;}
@@ -29,3 +30,84 @@ header{border-bottom: 1px solid #c8c7cc;}
 .leftNav ul li i{padding: 0 10px;}
 
 .leftNav ul li a:hover{background-color: #007AFF;color: #fff}
+.leftNav{height: 481px;}
+
+
+/*notification table*/
+.notification-table{float: left;margin: 30px 30px 0 30px;}
+
+.notification-table h1{font-size: 22px;padding: 10px; margin: 10px; background-color: rgb(247,247,248);}
+
+.notification-table .center {
+    text-align: center;
+}
+
+.notification-table .table {
+    font-family: Lucida Grande;
+    font-size: 11px;
+    color: #656565;
+    width: 500px;
+    border: 1px solid #d5d5d5;
+    -webkit-border-radius: 3px;
+}
+
+.notification-table table {
+    width: 100%;
+}
+
+.notification-table thead th {
+    padding: 15px 20px;
+    background: #e8e9eb;
+    border-bottom: 1px solid #d5d5d5;
+    font-weight: bold;
+}
+
+.notification-table thead th:first-child {
+    width: 60%;
+}
+
+.notification-table tbody td {
+    padding: 15px 20px;
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+
+
+.notification-table tbody td:last-child {
+    border-right: none;
+}
+
+.notification-table tbody tr:hover td {
+    background: #eee!important;
+}
+
+.notification-table tbody tr:nth-child(even) td {
+    background: #f8f8f8;
+}
+
+.notification-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/*new-user*/
+.angular-chart-user{margin: 30px 30px 0 30px; float: left;border: 1px solid #ccc;}
+.new-user-data li{display: inline-block; margin: 5px; padding: 11px; border-right: 1px solid #ccc;}
+.no-border-right{border-right: none !important;;}
+.new-user-head{font-size: 16px;border-bottom: 1px solid #ccc; padding: 21px;
+}
+#pieChart{    margin-left: 15px;
+    padding: 15px;}
+
+#new-user-legend li span{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+#new-user-legend li{
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+}

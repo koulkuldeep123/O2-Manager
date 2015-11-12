@@ -1,17 +1,20 @@
 ﻿<div ng-include src='"templates/header/header.html"'></div>
 <div class="home">
-<h1>Hello {{vm.user.firstName}}!</h1>
-<p>You are logged in!!!</p>
-<h3>All registered users:</h3>
-<ul>
-    <li ng-repeat="user in vm.allUsers">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
-    </li>
-</ul>
-<p>&nbsp;</p>
-<p><a href="#/login" class="btn btn-primary">Logout</a></p>
+<!--<h1>Hello {{vm.user.firstName}}!</h1>-->
+<!--<p>You are logged in!!!</p>-->
+<!--<h3>All registered users:</h3>-->
+<!--<ul>-->
+    <!--<li ng-repeat="user in vm.allUsers">-->
+        <!--{{user.username}} ({{user.firstName}} {{user.lastName}})-->
+        <!-- - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>-->
+    <!--</li>-->
+<!--</ul>-->
+<!--<p>&nbsp;</p>-->
+<!--<p><a href="#/login" class="btn btn-primary">Logout</a></p>-->
 </div>
 <div ng-include src='"templates/left-nav/left-nav.html"'></div>
+<div ng-include src='"templates/notification-table/notification-table.html"'></div>
+
 <div ng-include src='"templates/new-user/new-user.html"'></div>
+<div class="clear"></div>
 <div ng-include src='"templates/footer/footer.html"'></div>
