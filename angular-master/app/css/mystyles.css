@@ -5,9 +5,9 @@
 .o2-logo{float:left;background:url('../img/o2.logo.png') no-repeat;    width: 235px;height:80px; background-position: center;border-right: 1px solid #c8c7cc;}
 
 .head-nav{float:right; height: 70px; width: 369px;}
-.head-nav i{font-size: 25px; margin: 8px 20px;color: #007AFF;}
+.head-nav i{font-size: 22px;padding: 8px 20px;color: #777;}
 .head-nav ul li{display: inline-block; vertical-align: top; cursor: pointer;}
-.head-nav ul li div{text-align: center;color: #777;}
+.head-nav ul li div{text-align: center;color: #777;font-size:12px}
 .head-nav ul li a {text-decoration: none;}
 .head-nav ul{text-align: center;}
 
