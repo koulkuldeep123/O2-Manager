@@ -6850,8 +6850,7 @@ var View = fc.View = Class.extend({
 
 	displaying: null, // a promise representing the state of rendering. null if no render requested
 	isSkeletonRendered: false,
-	isEventsRendered: false,
-
+	isEventsRendered: true,
 	// range the view is actually displaying (moments)
 	start: null,
 	end: null, // exclusive
@@ -11156,12 +11155,12 @@ var AGENDA_STOCK_SUB_DURATIONS = [
 fcViews.agenda = {
 	'class': AgendaView,
 	defaults: {
-		allDaySlot: true,
+		allDaySlot: false,
 		allDayText: 'all-day',
 		slotDuration: '00:30:00',
 		minTime: '00:00:00',
 		maxTime: '24:00:00',
-		slotEventOverlap: true // a bad name. confused with overlap/constraint system
+		slotEventOverlap: false // a bad name. confused with overlap/constraint system
 	}
 };
 

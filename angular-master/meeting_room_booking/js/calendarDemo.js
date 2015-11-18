@@ -11,13 +11,19 @@ calendarDemoApp.controller('CalendarCtrl',
     var y = date.getFullYear();
 
     /* event source that contains custom events on the scope */
-    $scope.events = [
+     $scope.roomOne = [
       {title: 'Team 1',start: new Date(2015, 10, 1,10, 50),end: new Date(2015, 10,1 ,13,30)},
       {title: 'Team 2',start: new Date(2015,10,7, 12, 30),end: new Date(2015, 10,7 ,13,30)},
       {title: 'Team 1',start: new Date(2015, 10,  10, 19, 0),end: new Date(2015, 10,10, 19, 30)},
       {title: 'Team 2',start: new Date(2015, 10, 28,16, 15),end: new Date(2015, 10, 28, 16, 45)}
     ];
-    /* event source that calls a function on every view switch */
+	$scope.roomTwo = [
+      {title: 'Team 1',start: new Date(2015, 10, 5,10, 50),end: new Date(2015, 10,1 ,13,30)},
+      {title: 'Team 2',start: new Date(2015,10,9, 12, 30),end: new Date(2015, 10,7 ,13,30)},
+      {title: 'Team 1',start: new Date(2015, 10,  15, 19, 0),end: new Date(2015, 10,10, 19, 30)},
+      {title: 'Team 2',start: new Date(2015, 10, 17,16, 15),end: new Date(2015, 10, 28, 16, 45)}
+    ];
+   /* event source that calls a function on every view switch */
     $scope.eventsF = function (start, end, timezone, callback) {
       var s = new Date(start).getTime() / 1000;
       var e = new Date(end).getTime() / 1000;
@@ -25,14 +31,19 @@ calendarDemoApp.controller('CalendarCtrl',
       var events = [{title: ' ' + m,start: s + (50000),end: s + (100000),allDay: false, className: ['customFeed']}];
       callback(events);
     };
-    /* alert on Drop */
-     $scope.alertOnDrop = function(event, delta, revertFunc, jsEvent, ui, view){
-       $scope.alertMessage = ('Event Dropped to make dayDelta ' + delta);
+	
+	/* to switch json */
+	 $scope.events = $scope.roomOne;
+	$scope.onUserSelect = onUserSelect;
+	function onUserSelect(selectedMeetingRoom){
+    if(selectedMeetingRoom=='roomOne'){
+      $scope.events = $scope.roomOne;
+  	$scope.renderCalender();}
+  else if(selectedMeetingRoom=='roomTwo'){
+	  $scope.events = $scope.roomTwo;
+  	$scope.renderCalender();}
     };
-    /* alert on Resize */
-    $scope.alertOnResize = function(event, delta, revertFunc, jsEvent, ui, view ){
-       $scope.alertMessage = ('Event Resized to make dayDelta ' + delta);
-    };
+	
     /* add custom event*/
     $scope.addEvent = function() {
       $scope.events.push({
@@ -58,6 +69,7 @@ calendarDemoApp.controller('CalendarCtrl',
         }
       });
     };
+	
      /* Render Tooltip */
     $scope.eventRender = function( event, element, view ) {
         element.attr({'tooltip': event.title,
@@ -67,8 +79,8 @@ calendarDemoApp.controller('CalendarCtrl',
     /* config object */
     $scope.uiConfig = {
       calendar:{
-        height: 500,
-        editable: true,
+        height: 450,
+        editable: false,
         header:{
           left: 'today',
           center: 'title',

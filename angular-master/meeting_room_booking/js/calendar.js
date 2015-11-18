@@ -323,9 +323,9 @@ angular.module('ui.calendar', [])
         eventSourcesWatcher.subscribe(scope);
         eventsWatcher.subscribe(scope, function() {
           if (sourcesChanged === true) {
-            sourcesChanged = false;
+            sourcesChanged = true;
             // return false to prevent onAdded/Removed/Changed handlers from firing in this case
-            return false;
+            return true;
           }
         });
 
