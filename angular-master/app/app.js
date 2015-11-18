@@ -27,6 +27,11 @@
                 controllerAs: 'vm'
             })
 
+            .when('/meetingroom', {
+                controller: 'CalendarCtrl',
+                templateUrl: 'views/meetingroom/meetingroom.view.html'
+            })
+
             .otherwise({ redirectTo: 'views/login' });
     }
 

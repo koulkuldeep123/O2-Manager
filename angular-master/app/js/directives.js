@@ -20,3 +20,15 @@
 //    directive.templateUrl = "templates/footer/footer.html";
 //    return directive;
 //});
+
+app.directive('heade', function () {
+    return {
+        restrict: 'AE',
+        replace: true,
+        scope: {user: '='},
+        templateUrl: "/templates/header/header.html",
+        controller: ['$scope', '$filter', function ($scope, $filter) {
+            // Your behaviour goes here :)
+        }]
+    }
+});

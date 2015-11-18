@@ -1,0 +1,67 @@
+﻿<heade></heade>
+
+
+<div class="col-md-9" ng-app="calendarDemoApp" id="top">
+<div data-spy="scroll">
+<div role="main">
+    <div class="container">
+        <section id="directives-calendar" ng-controller="CalendarCtrl">
+            <div class="row-fluid">
+                <div class="col-md-3">
+                    <div class="btn-group calTools">
+                        <button type="button" class="btn btn-primary" ng-click="addEvent()">
+                            Book a meeting Room
+                        </button>
+                    </div>
+
+                    <ul class="unstyled">
+                        <li ng-repeat="e in events">
+                            <div class="alert alert-info">
+                                <a class="close" ng-click="remove($index)"><i class="fa fa-times"></i></a>
+                                <b> <input ng-model="e.title"></b>
+                                {{e.start | date:"EEE,dd (h-mma)"}} - {{e.end | date:"(h-mma)"}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-9">
+                    <tabset>
+                        <tab select="renderCalender('myCalendar1');" ng-click="onUserSelect('roomOne')">
+                            <tab-heading id="roomOne">
+                                <i class="fa fa-bell"></i> Meeting room one
+                            </tab-heading>
+                            <div class="btn-toolbar">
+                                <p class="pull-right lead">Meeting room one Options</p>
+                                <div class="btn-group">
+                                    <button class="btn btn-success" ng-click="changeView('agendaDay', 'myCalendar1')">AgendaDay</button>
+                                    <button class="btn btn-success" ng-click="changeView('agendaWeek', 'myCalendar1')">AgendaWeek</button>
+                                    <button class="btn btn-success" ng-click="changeView('month', 'myCalendar1')">Month</button>
+                                </div>
+                            </div>
+                            <div class="calendar" ng-model="eventSources" calendar="myCalendar1" ui-calendar="uiConfig.calendar"></div>
+                        </tab>
+                        <tab select="renderCalender('myCalendar2');" ng-click="onUserSelect('roomTwo')">
+                            <tab-heading id="roomTwo">
+                                <i class="fa fa-bell"></i> Meeting room two
+                            </tab-heading>
+                            <div class="btn-toolbar">
+                                <p class="pull-right lead">Meeting room two Options</p>
+                                <div class="btn-group">
+                                    <button class="btn btn-success" ng-click="changeView('agendaDay', 'myCalendar2')">AgendaDay</button>
+                                    <button class="btn btn-success" ng-click="changeView('agendaWeek', 'myCalendar2')">AgendaWeek</button>
+                                    <button class="btn btn-success" ng-click="changeView('month', 'myCalendar2')">Month</button>
+                                </div>
+                            </div>
+                            <div class="calendar" ng-model="eventSources" calendar="myCalendar2" ui-calendar="uiConfig.calendar"></div>
+                        </tab>
+                    </tabset>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</div>
+    </div>
+
+
+<div ng-include src='"templates/footer/footer.html"'></div>
