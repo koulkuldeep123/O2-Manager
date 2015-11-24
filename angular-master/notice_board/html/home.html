@@ -1,0 +1,79 @@
+<div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1>Notice Panel</h1>
+            </div>
+            <!--<ul id="navigation" class="nav nav-pills" ng-init="navNotice=['Active Notifications','My Notifications']">-->
+                <!--<li ng-repeat="temp in navNotice" ng-click="checkTab()">-->
+                    <!--<a href="#"  ng-class="{nav_active:myclass==temp}">-->
+                        <!--<h2>{{temp}}</h2>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+
+            <ul id="navigation" class="nav nav-pills">
+            <li  ng-click="status('true')">
+                <a href="#">
+                     <h2>Active Notifications</h2>
+                </a>
+            </li>
+                <li  ng-click="status('false')">
+                    <a href="#">
+                        <h2>My Notifications</h2>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        {{status}}
+
+        <div class="container">
+            <div class="panel-group" ng-show="$scope.myStatus">
+                <div class="panel panel-default" ng-repeat="todo in todos">
+                    <div ng-if="todo.Status==='1'">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a href="#collapseOne">{{todo.Header}}</a>
+                            </h4>
+                        </div>
+                        <div>
+                            <div class="panel-body">
+                                <div class="pull-left width">{{todo.Content}}</div>
+                                <div class="pull-right width">{{todo.Date}}</div>
+                                <div class="clearfix"></div>
+                                <div>
+                                    <div class="pull-left width"><label>Associated Id :</label>{{todo.Associate_Id}}</div>
+                                    <div class="pull-right width"><label>Associated Name :</label>{{todo.Associate_name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel-group" ng-hide="$scope.myStatus">
+                <div class="panel panel-default" ng-repeat="todo in todos">
+                    <div ng-if="todo.Associate_Id==='432304'">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a href="#collapseOne">{{todo.Header}}</a>
+                            </h4>
+                        </div>
+                        <div>
+                            <div class="panel-body">
+                                <div class="pull-left width">{{todo.Content}}</div>
+                                <div class="pull-right width">{{todo.Date}}</div>
+                                <div class="clearfix"></div>
+                                <div>
+                                    <div class="pull-left width"><label>Associated Id :</label>{{todo.Associate_Id}}</div>
+                                    <div class="pull-right width"><label>Associated Name :</label>{{todo.Associate_name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
